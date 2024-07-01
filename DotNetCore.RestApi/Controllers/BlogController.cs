@@ -41,6 +41,7 @@ public class BlogController : ControllerBase
             return BadRequest($"Error: {ex.Message}");
         }
     }
+
     [HttpPost]
     public async Task<IActionResult> CreateBlog(BlogDataModel reqModel)
     {
@@ -49,6 +50,7 @@ public class BlogController : ControllerBase
         var message = result > 0 ? "Saving Successful" : "Saving failed";
         return Ok(message);
     }
+
     [HttpPut]
     public async Task<IActionResult> UpdateBlog(int blogId, BlogDataModel reqModel)
     {
@@ -79,6 +81,7 @@ public class BlogController : ControllerBase
         string message = result > 0 ? "Saving successful" : "Saving failed";
         return Ok(message);
     }
+
     [HttpPatch("{id}")]
     public IActionResult PathchBLog(int id, BlogDataModel blog)
     {
